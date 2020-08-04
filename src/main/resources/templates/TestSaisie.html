@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Test Projet</title>
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<h1>Test Saisie</h1>
+		
+		<div class="row">
+		<div class="col-md-4 mx-auto mt-5 text-center">
+		<p>
+		<form th:action="@{|/resultatSaisie|}" method="POST">
+
+		Saisie test :
+		<input type="text" name="msg" /> 
+					<br /> 
+		
+		<input type="submit" value="Valider" />
+				</form>
+				</p>
+		
+		
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript"
+		src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
+</body>
+</html>
