@@ -11,7 +11,7 @@ pipeline {
                 echo 'Building..'
                 git 'https://github.com/wendy-trs/projetTestJava.git'
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
-                sh 'ls'
+                sh 'tree'
             }
         }
         stage('Test') {
