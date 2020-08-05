@@ -30,7 +30,7 @@ pipeline {
             }
             steps {
                 echo 'Archiving..'
-                archiveArtifacts artifacts: 'testprojet-java', followSymlinks: false
+                archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
             }
         }
     }
