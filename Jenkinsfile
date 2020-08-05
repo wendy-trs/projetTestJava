@@ -23,12 +23,7 @@ pipeline {
             }
         }
         stage('Download') {
-            when {
-              expression {
-                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-              }
-            }
-            steps {
+           steps {
                 echo 'Archiving..'
                 archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
             }
