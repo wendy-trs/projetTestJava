@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo 'Testing..'
                 sh 'make check || true' 
-                junit 'testprojet-java/target/test-reports/*.xml'
+                junit 'testprojet-java/*.xml'
             }
         }
         stage('Download') {
