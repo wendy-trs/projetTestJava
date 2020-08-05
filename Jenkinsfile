@@ -19,7 +19,7 @@ pipeline {
             steps {
                 echo 'Testing..' 
                 sh 'make check || true' 
-                junit 'tests.xml'
+                junit '**/target/surefire-reports/TEST-*.xml'
             }
         }
         stage('Download') {
