@@ -21,15 +21,10 @@ pipeline {
                 junit '**/target/*.xml'
             }
         }
-        stage('Deploy') {
-            when {
-              expression {
-                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-              }
-            }
+        stage('Archive') {
             steps {
-                echo 'Deploying..'
-                sh 'make publish'
+                echo 'Archiving..'
+                archiveArtifacts artifacts: 'testprojet-java', followSymlinks: false
             }
         }
     }
