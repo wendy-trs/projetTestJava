@@ -18,10 +18,15 @@ pipeline {
             steps {
                 echo 'Testing..'
                 sh 'make check || true' 
-                junit '**/target/*.xml'
+                junit junit 'testprojet-java/target/test-reports/*.xml'
             }
         }
-        stage('Archive') {
+        stage('Download') {
+            when {
+              expression {
+                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
+              }
+            }
             steps {
                 echo 'Archiving..'
                 archiveArtifacts artifacts: 'testprojet-java', followSymlinks: false
